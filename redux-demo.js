@@ -2,17 +2,17 @@ const redux = require('redux');
 
 const couterReducer = (state = {counter : 0}, action) =>{
 
-    if(action.type === 'increment'){
+    if(action.type === 'incrementBy2'){
 
     return {
-        counter : state.counter + 1
+        counter : state.counter + 2
     }
 }
 
- if(action.type === 'decrement'){
+ if(action.type === 'decrementBy2'){
 
     return {
-        counter : state.counter - 1
+        counter : state.counter - 2
     }
 }
 }
@@ -26,13 +26,14 @@ const counterSubscriber = () => {
 
 store.subscribe(counterSubscriber);
 
-store.dispatch({type: 'increment' })
-store.dispatch({type: 'increment' })
-store.dispatch({type: 'increment' })
-store.dispatch({type: 'increment' })
-store.dispatch({type: 'increment' })
+store.dispatch({type: 'incrementBy2' })
+store.dispatch({type: 'incrementBy2' })
 
-store.dispatch({type: 'decrement' })
+store.dispatch({type: 'incrementBy2' })
+
+
+
+store.dispatch({type: 'decrementBy2' })
 
 
 
